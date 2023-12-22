@@ -1,0 +1,82 @@
+[20-Dec-2023 13:13:33 America/Caracas] conexion exitosa
+[21-Dec-2023 12:43:41 America/Caracas] conexion exitosa
+[21-Dec-2023 12:51:01 America/Caracas] conexion exitosa
+[21-Dec-2023 12:53:06 America/Caracas] conexion exitosa
+[21-Dec-2023 12:58:10 America/Caracas] conexion exitosa
+[21-Dec-2023 13:07:07 America/Caracas] conexion exitosa
+[21-Dec-2023 13:27:49 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 57
+[21-Dec-2023 13:27:49 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:27:49 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:27:49 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:27:49 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[21-Dec-2023 13:27:49 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 59
+[21-Dec-2023 13:27:49 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:27:49 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:27:49 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:27:49 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[21-Dec-2023 13:27:49 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 61
+[21-Dec-2023 13:27:49 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:27:49 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:27:49 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:27:49 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[21-Dec-2023 13:58:24 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 57
+[21-Dec-2023 13:58:24 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:58:24 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:58:24 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:58:24 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[21-Dec-2023 13:58:24 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 59
+[21-Dec-2023 13:58:24 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:58:24 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:58:24 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:58:24 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[21-Dec-2023 13:58:24 America/Caracas] PHP Warning:  Undefined array key 2 in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 61
+[21-Dec-2023 13:58:24 America/Caracas] PHP Stack trace:
+[21-Dec-2023 13:58:24 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[21-Dec-2023 13:58:24 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[21-Dec-2023 13:58:24 America/Caracas] PHP   3. App\Controllers\UserController->getLogin($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:65
+[22-Dec-2023 06:17:40 America/Caracas] conexion exitosa
+[22-Dec-2023 06:18:31 America/Caracas] conexion exitosa
+[22-Dec-2023 06:19:38 America/Caracas] conexion exitosa
+[22-Dec-2023 06:33:56 America/Caracas] conexion exitosa
+[22-Dec-2023 06:34:43 America/Caracas] conexion exitosa
+[22-Dec-2023 07:14:17 America/Caracas] PHP Warning:  Undefined array key "confirmPassword" in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 45
+[22-Dec-2023 07:14:17 America/Caracas] PHP Stack trace:
+[22-Dec-2023 07:14:17 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[22-Dec-2023 07:14:17 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[22-Dec-2023 07:14:17 America/Caracas] PHP   3. App\Controllers\UserController->__construct($method = 'post', $route = 'user/', $paramsRoutes = [0 => 'user', 1 => ''], $data = ['name' => 'hugo', 'dni' => '114', 'email' => 'prueba@prueba.com', 'rol' => '2', 'password' => '123456789', 'confirPassword' => '123456789'], $header = ['content-length' => '124', 'accept-encoding' => 'gzip, deflate, br', 'Accept' => '*/*', 'User-Agent' => 'Thunder Client (https://www.thunderclient.com)', 'Content-Type' => 'application/json', 'Host' => 'localhost', 'Connection' => 'close']) C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:63
+[22-Dec-2023 07:16:11 America/Caracas] PHP Warning:  Undefined array key "confirmPassword" in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 104
+[22-Dec-2023 07:16:11 America/Caracas] PHP Stack trace:
+[22-Dec-2023 07:16:11 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[22-Dec-2023 07:16:11 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[22-Dec-2023 07:16:11 America/Caracas] PHP   3. App\Controllers\UserController->solicitudPost($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:75
+[22-Dec-2023 07:16:32 America/Caracas] PHP Warning:  Undefined array key "confirmPassword" in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 104
+[22-Dec-2023 07:16:32 America/Caracas] PHP Stack trace:
+[22-Dec-2023 07:16:32 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[22-Dec-2023 07:16:32 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[22-Dec-2023 07:16:32 America/Caracas] PHP   3. App\Controllers\UserController->solicitudPost($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:75
+[22-Dec-2023 07:17:36 America/Caracas] PHP Warning:  Undefined array key "confirmPassword" in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 106
+[22-Dec-2023 07:17:36 America/Caracas] PHP Stack trace:
+[22-Dec-2023 07:17:36 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[22-Dec-2023 07:17:36 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[22-Dec-2023 07:17:36 America/Caracas] PHP   3. App\Controllers\UserController->solicitudPost($endPoint = 'user/') C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:75
+[22-Dec-2023 07:18:15 America/Caracas] conexion exitosa
+[22-Dec-2023 07:18:15 America/Caracas] conexion exitosa
+[22-Dec-2023 07:18:15 America/Caracas] conexion exitosa
+[22-Dec-2023 07:19:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:19:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:19:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:25:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:25:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:25:52 America/Caracas] conexion exitosa
+[22-Dec-2023 07:27:46 America/Caracas] conexion exitosa
+[22-Dec-2023 07:27:46 America/Caracas] conexion exitosa
+[22-Dec-2023 07:27:46 America/Caracas] conexion exitosa
+[22-Dec-2023 07:29:09 America/Caracas] conexion exitosa
+[22-Dec-2023 07:29:09 America/Caracas] conexion exitosa
+[22-Dec-2023 07:29:09 America/Caracas] conexion exitosa
+[22-Dec-2023 07:32:44 America/Caracas] conexion exitosa
+[22-Dec-2023 07:32:45 America/Caracas] conexion exitosa
+[22-Dec-2023 07:32:45 America/Caracas] conexion exitosa
+[22-Dec-2023 07:33:04 America/Caracas] conexion exitosa
+[22-Dec-2023 07:33:22 America/Caracas] conexion exitosa
+[22-Dec-2023 07:33:22 America/Caracas] conexion exitosa
