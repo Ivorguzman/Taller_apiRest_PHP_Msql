@@ -17,11 +17,11 @@ $data = array(
 	'port' => $_ENV['PORT'],
 );
 
-var_dump($data['ip']);
-var_dump($data['port']);
-var_dump($data['db']);
-var_dump($data['user']);
-var_dump($data['password']);
+// //var_dump($data['ip']);
+// //var_dump($data['port']);
+// //var_dump($data['db']);
+// //var_dump($data['user']);
+// //var_dump($data['password']);
 
 $host = 'mysql:host=' . $data['ip'] . ';' . 'port=' . $data['port'] . ';' . 'dbname=' . $data['db'];
 

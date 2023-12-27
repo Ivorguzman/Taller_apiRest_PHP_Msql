@@ -1,3 +1,5 @@
 {
-  "docwriter.language": "Spanish"
+  "docwriter.language": "Spanish",
+  "commentTranslate.multiLineMerge": false,
+  "commentTranslate.source": "Google"
 }

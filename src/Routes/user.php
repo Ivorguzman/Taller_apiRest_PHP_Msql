@@ -11,7 +11,7 @@ use App\Controllers\UserController;
 superglobal `["REQUEST_METHOD"]` y se convierte a minúsculas usando la función `strtolower()`. */
 
 $method = strtolower($_SERVER["REQUEST_METHOD"]);
-var_dump($method);
+// //var_dump($method);
 
 
 /* `htmlspecialchars( ['route']."/");` está desinfectando y codificando el valor del
@@ -24,7 +24,7 @@ HTML se codifica correctamente, lo que garantiza que se represente como texto y 
 como código HTML.*/
 $route = $_GET['route'];
 $route = htmlspecialchars($_GET['route']);
-var_dump($route);
+// //var_dump($route);
 
 
 /* La variable `params` se utiliza para almacenar los parámetros extraídos de la ruta. En este código,
@@ -32,7 +32,7 @@ la ruta se divide en segmentos usando la función `explode()`, y cada segmento s
 elemento en la matriz `params`. Estos parámetros se pueden utilizar para determinar qué controlador
 y método deben manejar la solicitud. */
 $paramsRoutes = explode('/', $route);
-var_dump($paramsRoutes);
+// //var_dump($paramsRoutes);
 
 
 
@@ -42,7 +42,7 @@ solicitud. Se obtiene decodificando el contenido del cuerpo de la solicitud usan
 le permite leer los datos de entrada sin procesar como una cadena, que luego puede procesarse o decodificarse según sea necesario. */
 $data = json_decode(file_get_contents('php://input'), true);
 
-var_dump($data);
+// //var_dump($data);
 
 
 /* La variable `headers` se utiliza para almacenar todos los encabezados HTTP que se envían en la
@@ -51,30 +51,31 @@ información como el tipo de contenido, las credenciales de autenticación y cua
 personalizado que se incluya en la solicitud. */
 $header = getallheaders();
 
-var_dump($method);
-var_dump($route);
-var_dump($paramsRoutes);
-var_dump($data);
-var_dump($header);
+// //var_dump($method);
+// //var_dump($route);
+// //var_dump($paramsRoutes);
+// //var_dump($data);
+// //var_dump($header);
 
 
 /* Se está creando una instancia del `UserController` con los parámetros `method,  $route,  $params, $data, $header`. Esto significa que se está creando una nueva instancia de la clase `UserController` y los valores de estos parámetros se pasan a su constructor.
 La variable `app`. Se utiliza para manejar la solicitud entrante llamando al controlador y método apropiados según el método HTTP, la ruta y otros parámetros. La clase `UseControllers` es responsable de procesar la solicitud y generar la respuesta adecuada.*/
 $app = new UserController($method,  $route,  $paramsRoutes, $data, $header);
 
-$app->getLogin("user/");
-/* La declaración `if` verifica si el método HTTP es `POST` y la ruta es `user/`. Si ambas
-condiciones son verdaderas, llama al método `post()` de la instancia `UserController` ($app) con el
-parámetro `'user/'`. Este método es responsable de manejar la solicitud POST para la ruta
-`user/`. */
+// $app->getLogin("user/");
+// /* La declaración `if` verifica si el método HTTP es `POST` y la ruta es `user/`. Si ambas
+// condiciones son verdaderas, llama al método `post()` de la instancia `UserController` ($app) con el
+// parámetro `'user/'`. Este método es responsable de manejar la solicitud POST para la ruta
+// `user/`. */
 
 if ($method == 'post' && $route == 'user/') {
-	var_dump($method);
-	var_dump($route);
+	// //var_dump($method);
+	// //var_dump($route);
 
-	$app->postVerificarDatos('user/');
+	$app->getTodosLosUsuarios('user/');
+	$app->postValidarDatos('user/');
 } else {
-	var_dump($method);
-	var_dump($route);
+	// //var_dump($method);
+	// //var_dump($route);
 	echo json_encode(ResponseHttp::status404(CE_404 . ": user.php ==> Ruta incorrecta "));
 }

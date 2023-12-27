@@ -7,6 +7,7 @@ use App\Config\ResponseHttp;
 /* La `clase Sql extiende ConnectionDb` está creando una nueva clase llamada `Sql` que extiende la
 clase `ConnectionDb`. Esto significa que la clase `Sql` hereda todas las propiedades y métodos de la
 clase `ConnectionDb`. */
+
 class Sql extends ConnectionDb
 {
 
@@ -23,13 +24,13 @@ class Sql extends ConnectionDb
 	 */
 	/* El método `->execute()` se utiliza para ejecutar una declaración preparada con los
 			  parámetros dados. En este caso, los parámetros se pasan como una matriz asociativa donde la clave 	es el nombre de la columna (`condition`) y el valor es el valor del parámetro (`param`). Esto permite que la declaración preparada se ejecute con los valores especificados para la condición 	dada. */
-	public static function existe(string $request, string $condition, $param)//OjO Cambiar nombres
+	public static function existe(string $request, string $condition, $param) //OjO Cambiar nombres
 	{
 
 		// // print("Prueba sql.php");
-		// // var_dump('$request ===> ' . $request);
-		// // var_dump('$condition ===> ' . $condition);
-		// // var_dump('$param ===> ' . $param);
+		// // // //var_dump('$request ===> ' . $request);
+		// // // //var_dump('$condition ===> ' . $condition);
+		// // // //var_dump('$param ===> ' . $param);
 
 		try {
 			$conn = self::getConnection();
@@ -42,10 +43,10 @@ class Sql extends ConnectionDb
 			especificados para la condición dada. */
 			$asignar_valores_parametros = array($condition => $param);
 			$pStm->execute($asignar_valores_parametros);
-			
+
 
 			$response = ($pStm->rowCount() == 0) ? false : true;
-			
+
 			return $response;
 		} catch (\PDOException $PDOex) {
 			error_log('Sql::exist ->' . $PDOex->getMessage());
