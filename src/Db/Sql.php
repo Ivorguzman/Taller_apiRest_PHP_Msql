@@ -27,10 +27,10 @@ class Sql extends ConnectionDb
 	public static function existe(string $request, string $condition, $param) //OjO Cambiar nombres
 	{
 
-		// // print("Prueba sql.php");
-		// // // //var_dump('$request ===> ' . $request);
-		// // // //var_dump('$condition ===> ' . $condition);
-		// // // //var_dump('$param ===> ' . $param);
+		// // //  print("Prueba sql.php");
+		// // // //// var_dump('$request ===> ' . $request);
+		// // // //// var_dump('$condition ===> ' . $condition);
+		// // // //// var_dump('$param ===> ' . $param);
 
 		try {
 			$conn = self::getConnection();

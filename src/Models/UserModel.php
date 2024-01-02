@@ -53,6 +53,9 @@ nombre, DNI (número de identificación), correo electrónico, rol, contraseña,
 	/* La función es un constructor que inicializa las propiedades de la clase con valores de una matriz. */
 	public function __construct(array $data)
 	{
+		//  print("PRUEBA userModel.php => function	_constructor()" . "<br><br>");
+		// var_dump($data['email']);
+
 		self::$name   = $data['name'];
 		self::$dni      = $data['dni'];
 		self::$email   = $data['email'];
@@ -142,16 +145,16 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 			$sql = "SELECT * FROM usuario WHERE correo = :correo ";
 
 			$resulSetSqlPreparada = $conn->prepare($sql);
-			// // print("Pruebas UserModel.php");
-			// //var_dump($resulSetSqlPreparada);
+			// // //  print("Pruebas UserModel.php");
+			// //// var_dump($resulSetSqlPreparada);
 
 			/* Esta matriz se utiliza para vincular el valor de `self::getEmail()` al marcador
 				de posición `:correo` en la declaración preparada. */
-			// //var_dump(self::getEmail());
+			// //// var_dump(self::getEmail());
 
 			$asignar_valores_parametros = array(':correo' => self::getEmail());
 
-			// //var_dump($asignar_valores_parametros[':correo']);
+			// //// var_dump($asignar_valores_parametros[':correo']);
 
 			/* La línea ` ->execute();` está ejecutando una declaración  preparada con los valores
 			asignados a los marcadores de posición en la consulta SQL. El array
@@ -162,26 +165,26 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 			ejecutará la declaración preparada con los valores asignados,
 			reemplazando los marcadores de posición en la consulta SQL con los valores reales. */
 			$resulSetSqlPreparada->execute($asignar_valores_parametros);
-			// // // //var_dump($resulSetSqlPreparada->execute($asignar_valores_parametros));
-			// //var_dump($resulSetSqlPreparada->rowCount());
+			// // // //// var_dump($resulSetSqlPreparada->execute($asignar_valores_parametros));
+			// //// var_dump($resulSetSqlPreparada->rowCount());
 
 			if ($resulSetSqlPreparada->rowCount() === 0) {
 				return ResponseHttp::status400(CE_400 . ': UserModel-< Usuario no existe en base de datos >-');
 			} else {
 				foreach ($resulSetSqlPreparada as $datosResultSet) {
 
-					// // var_dump($datosResultSet); // Contenido del Result Set
-					// // var_dump(self::getPassword());
-					// // var_dump($datosResultSet['password']);
+					// // // var_dump($datosResultSet); // Contenido del Result Set
+					// // // var_dump(self::getPassword());
+					// // // var_dump($datosResultSet['password']);
 
 					if (Security::validarMiPassword(self::getPassword(), $datosResultSet['password'])) {
 
-						// // var_dump($datosResultSet['password']);
+						// // // var_dump($datosResultSet['password']);
 
 						/* En el código, la variable `$IdentificadorToken` se utiliza para almacenar una matriz asociativa que 	contiene los datos que se codificarán en el JSON Web Token (JWT). Estos datos incluyen información sobre el usuario o la sesión. En este caso, la carga útil incluye el valor "IDToken" recuperado de la base de datos.*/
 						$IdentificadorToken = ['IDToken' => $datosResultSet['IDToken']];
 
-						// // var_dump($IdentificadorToken);
+						// // // var_dump($IdentificadorToken);
 
 
 						/* La variable `token` se utiliza para almacenar el (JWT) que se crea utilizando
@@ -191,7 +194,7 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 						útil incluye el valor del	"IDToken" recuperado de la base de datos. */
 						$token = Security::crearTokenJwt(Security::obtenerValorVariableEntorno(), $IdentificadorToken);
 
-						// //var_dump($token);
+						// //// var_dump($token);
 
 						/* La matriz `$data` se está creando para almacenar los valores del nombre, rol y token del usuario. Estos valores  contiene los datos obtenidos de la base de datos. Las claves `['nombre']` y `['rol']` . Esta matriz `$data` se devolverá como datos de respuesta cuando un usuario inicie sesión correctamente. */
 						$dataLoginBaseDatos = [
@@ -200,19 +203,19 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 							'token' => $token
 						];
 
-						// // var_dump($dataLoginBaseDatos);
+						// // // var_dump($dataLoginBaseDatos);
 
 						return ResponseHttp::status200($dataLoginBaseDatos);
 						// return ResponseHttp::status200($dataLoginBaseDatos . CE_200 . ' UserModel-< usuario y clave son correctos>-');
 						// exit;
 					} else {
-						return ResponseHttp::status400(CE_400 . ': UserModel-< usuario o clave son incorrectos>-');
+						return ResponseHttp::status400(CE_400 . ': UserModel.php-< usuario o clave son incorrectos>-');
 					}
 				}
 			}
 		} catch (\PDOException $e) {
 			error_log("UserModel::Login -> " . $e);
-			die(json_encode(ResponseHttp::status500(CE_500 . ': UserModel-<No existe registro>-')));
+			die(json_encode(ResponseHttp::status500(CE_500 . ': UserModel.php-<No existe registro>-')));
 		}
 	}
 
@@ -225,17 +228,63 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 			caracteres en utf8 para la conexión de la base de datos. */
 			$conn = self::getConnection();
 			$conn->exec("SET CHARACTER SET utf8"); // Establciendo uso de caracteres especiales
-			$sqlSinParametros = "SELECT * FROM usuarios ";
+			$sqlSinParametros = "SELECT * FROM usuario ";
 			$pStm = $conn->prepare($sqlSinParametros);
 			$pStm->execute();
-			if ($pStm->rowCount() > 0) {
-				return ResponseHttp::status200(CE_200 . 'Consulta Exitosa');
-			} else {
+			$resultSet = $pStm;
 
-				return ResponseHttp::status500(CE_500 . 'Consulta fallida');
+			// // // var_dump($pStm);
+
+			$todosLosUsuarios['dataUsuarios'] = $resultSet->fetchAll(\PDO::FETCH_ASSOC);
+
+			// // // var_dump($todosLosUsuarios);
+
+			return $todosLosUsuarios;
+		} catch (\PDOException $e) {
+			error_log('UserModel.php => getTodosLosUsuarios()' . $e);
+			exit(json_encode(ResponseHttp::status500(CE_500 . 'UserModel.php => Falla al obtener datos')));
+		}
+	}
+
+	/* El código anterior es una función PHP llamada `getUsuarioEspesifico()` que recupera un usuario
+	específico de una tabla de base de datos. */
+	final public  static function	getUsuarioEspesifico()
+	{
+		//  print("PRUEBA userModel.php => function	getUsuarioEspesifico()" . "<br><br>");
+		/* El código  siguiente ejecuta una consulta SQL para verificar si existe un usuario con una dirección 	de correo electrónico específica en la tabla "usuario". Primero establece una conexión con la base 	de datos y establece el juego de caracteres en utf8. Luego, prepara una declaración SQL con una consulta parametrizada para seleccionar el correo electrónico de la tabla "usuario" donde el correo electrónico coincide con el correo electrónico proporcionado. Asigna el valor del parámetro de 	correo electrónico mediante una matriz. Luego, la declaración preparada se ejecuta con los valores 	de los parámetros asignados. El conjunto de resultados se almacena en la variable . 	Luego, el código verifica el número de filas devueltas por la consulta. si el número de filas devueltas por el objeto `$resultSet` es igual a '0'. Si es así, devuelve una respuesta con un código de estado de 400 y un mensaje que dice "Usuario no registrado". */
+		try {
+
+			$conn = self::getConnection();
+			$conn->exec("SET CHARACTER SET utf8"); // Establciendo uso de caracteres especiales
+			$sqlConParametros = 'SELECT * FROM usuario WHERE correo = :correo';
+			// // $sqlConParametros2 = "SELECT * FROM usuario WHERE correo='prueba1@prueba.com'";
+			// var_dump(self::getEmail());
+
+			$asignar_valores_parametros = array(
+				':correo' => self::getEmail()
+			);
+
+			// var_dump($asignar_valores_parametros);
+
+			$pStm = $conn->prepare($sqlConParametros);
+			$pStm->execute($asignar_valores_parametros);
+			// // $pStm->execute();
+			$resultSet = $pStm;
+
+			// var_dump($resultSet);
+			// var_dump($resultSet->rowCount());
+
+
+			if ($resultSet->rowCount() === 0) {
+				return ResponseHttp::status400(': UserModel.php => function getUsuarioEspesifico() Usuario no registrado');
 			}
-		} catch (\Throwable $th) {
-			//throw $th;
+
+			$todosLosUsuarios['dataUsuarios'] = $resultSet->fetchAll(\PDO::FETCH_ASSOC);
+
+			return $todosLosUsuarios;
+		} catch (\PDOException $e) {
+			error_log('UserModel.php => getTodosLosUsuarios()' . $e);
+			exit(json_encode(ResponseHttp::status500(CE_500 . 'UserModel.php => Falla al obtener datos')));
 		}
 	}
 
@@ -281,8 +330,8 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 
 			/* `->execute();` está ejecutando una declaración preparada con los
 			valores asignados a los marcadores de posición en la consulta SQL. */
-				$pStm->execute($asignar_valores_parametros);
-			
+			$pStm->execute($asignar_valores_parametros);
+
 
 			if ($pStm->rowCount() > 0) {
 				return ResponseHttp::status200(CE_200 . 'Registro Exitoso');

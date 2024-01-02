@@ -1,22 +1,10 @@
-[26-Dec-2023 14:30:54 America/Caracas] conexion exitosa
-[26-Dec-2023 14:36:30 America/Caracas] conexion exitosa
-[26-Dec-2023 14:37:37 America/Caracas] conexion exitosa
-[26-Dec-2023 14:38:29 America/Caracas] conexion exitosa
-[26-Dec-2023 14:39:37 America/Caracas] conexion exitosa
-[26-Dec-2023 14:40:16 America/Caracas] conexion exitosa
-[26-Dec-2023 14:40:35 America/Caracas] conexion exitosa
-[26-Dec-2023 14:43:00 America/Caracas] conexion exitosa
-[26-Dec-2023 14:45:28 America/Caracas] conexion exitosa
-[26-Dec-2023 14:46:14 America/Caracas] conexion exitosa
-[26-Dec-2023 14:52:37 America/Caracas] conexion exitosa
-[26-Dec-2023 15:06:18 America/Caracas] conexion exitosa
-[26-Dec-2023 15:42:25 America/Caracas] conexion exitosa
-[26-Dec-2023 15:44:20 America/Caracas] conexion exitosa
-[26-Dec-2023 15:44:41 America/Caracas] conexion exitosa
-[26-Dec-2023 15:45:40 America/Caracas] conexion exitosa
-[26-Dec-2023 15:47:07 America/Caracas] conexion exitosa
-[26-Dec-2023 15:47:29 America/Caracas] conexion exitosa
-[26-Dec-2023 15:49:09 America/Caracas] conexion exitosa
-[26-Dec-2023 15:51:40 America/Caracas] conexion exitosa
-[26-Dec-2023 15:57:05 America/Caracas] conexion exitosa
-[26-Dec-2023 16:03:16 America/Caracas] conexion exitosa
+[02-Jan-2024 13:06:36 America/Caracas] conexion exitosa
+[02-Jan-2024 13:06:45 America/Caracas] conexion exitosa
+[02-Jan-2024 13:07:37 America/Caracas] PHP Warning:  Trying to access array offset on value of type null in C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Controllers\UserController.php on line 46
+[02-Jan-2024 13:07:37 America/Caracas] PHP Stack trace:
+[02-Jan-2024 13:07:37 America/Caracas] PHP   1. {main}() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:0
+[02-Jan-2024 13:07:37 America/Caracas] PHP   2. require() C:\wamp64\www\Taller_apiRest_PHP_Msql\public\index.php:58
+[02-Jan-2024 13:07:37 America/Caracas] PHP   3. App\Controllers\UserController->__construct($method = 'get', $route = 'user/', $paramsRoutes = [0 => 'user', 1 => ''], $dataUserController = NULL, $header = ['accept-encoding' => 'gzip, deflate, br', 'Accept' => '*/*', 'User-Agent' => 'Thunder Client (https://www.thunderclient.com)', 'Authorization' => 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MDM2MTEzNTAsImV4cCI6MTcxNjU3MTM1MCwiZGF0YSI6eyJJRFRva2VuIjoiYzVkYWIzZjc1NGVjYmE1NjVhZmFiZGZhNjcwMTNjMWMxZjU3OWUxOGJjOTU2NzEzMTA2MTNiMWQ3NGVhYjJmNmY4NTA0NzczN2NhOGZkMzliNDE3ZGE4NTZkMDk5Mjk0M2YwMDc2NjIxYmE4MWFjZWQ1ZWNkNTdkZjY2NDM2YzEifX0.YaYtIYBLOpGcDo8znHaSEYBnyJqDv6idop_uaDvJyVw', 'Host' => 'localhost', 'Connection' => 'close']) C:\wamp64\www\Taller_apiRest_PHP_Msql\src\Routes\user.php:61
+[02-Jan-2024 13:07:37 America/Caracas] conexion exitosa
+[02-Jan-2024 13:08:02 America/Caracas] conexion exitosa
+[02-Jan-2024 13:09:12 America/Caracas] conexion exitosa
