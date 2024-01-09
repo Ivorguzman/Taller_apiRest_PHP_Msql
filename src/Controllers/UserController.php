@@ -207,7 +207,9 @@ class UserController
 		if ($this->method == "patch" && $this->route == $endPoint) {
 
 			$jwtDecodificado = Security::getDataJwt();
-			if(empty($this->dataUserController))
+			if(empty($this->dataUserController)){
+				
+			}
 		}
 	}
 }

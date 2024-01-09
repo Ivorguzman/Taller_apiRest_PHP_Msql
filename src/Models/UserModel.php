@@ -64,10 +64,8 @@ nombre, DNI (número de identificación), correo electrónico, rol, contraseña,
 	}
 
 
-	/** INICIO GETERS Y SETERS
-	 * Este código PHP define  clases con métodos getter y setter para varias propiedades como nombre,
-	 * DNI, correo electrónico, rol, contraseña, token de identificación y fecha.
-	 */
+	//? ** INICIO GETERS Y SETERS 
+	// Este código PHP define  clases con métodos getter y setter para varias propiedades como nombre, DNI, correo electrónico, rol, contraseña, token de identificación y fecha.
 	final public static function getName(): string
 	{
 		return self::$name;
@@ -131,7 +129,7 @@ nombre, DNI (número de identificación), correo electrónico, rol, contraseña,
 
 
 
-	/***************************************Login******************************************/
+	//? ************* Craer Login  *********************/
 	/* La función `login()` es un método estático en la clase `UserModel`. Se utiliza para autenticar a un
 usuario comparando su correo electrónico y contraseña con la base de datos. */
 	final public static function login()
@@ -219,8 +217,7 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 		}
 	}
 
-
-
+	//? **********************Consultar todos los usuarios*********************/
 	final public  static function	getTodosLosUsuarios()
 	{
 		try {
@@ -246,6 +243,10 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 		}
 	}
 
+
+
+
+	//? ************* Consultar un usuario por email *********************/
 	/* El código anterior es una función PHP llamada `getUsuarioEspesifico()` que recupera un usuario
 	específico de una tabla de base de datos. */
 	final public  static function	getUsuarioEspesifico()
@@ -289,7 +290,7 @@ usuario comparando su correo electrónico y contraseña con la base de datos. */
 	}
 
 
-
+	//? ********************** Registrar / Crear usuario ***********************/
 	/* El código anterior es una función PHP llamada "postCrearUsuario" que se utiliza para crear un nuevo usuario en una base de datos. */
 	final public static function postCrearUsuario()
 	{

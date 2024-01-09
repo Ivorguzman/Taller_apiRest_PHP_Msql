@@ -84,21 +84,23 @@ $app = new UserController($method,  $route,  $paramsRoutes, $dataBody, $header);
 
 
 
-// *? METODO(s) POST(s) ******
+// *? METODO(s) post(s) ******
 if ($method == 'post') {
 	// // // var_dump($method);
 	// // // var_dump($route);
 
 	$app->postValidarDatos('user/');
 
-	// *? METODO(s) GET(s) ******
+	// *? METODO(s) get(s) ******
 } else if ($method == 'get') {
 	// // // var_dump($method);
 	// // // var_dump($route);
 
 	$app->getTodosLosUsuarios('user/');
 	$app->getUsuarioEspesifico("user/{$paramsRoutes[1]}");
-} else if ($method == 'pactch') {
+
+	// *? METODO(s) patch(s) ******
+} else if ($method == 'patch') {
 		$app->patchPassword('user/password');
 }
  else {
